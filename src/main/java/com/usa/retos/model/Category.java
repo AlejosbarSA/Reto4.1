@@ -45,7 +45,7 @@ public class Category implements Serializable {
     }
 
     public List<Machine> getMachines() {
-        return machines;
+        return computers;
     }
 
     public void setMachines(List<Machine> machines) {
