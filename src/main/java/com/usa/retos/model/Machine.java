@@ -19,7 +19,7 @@ public class Machine implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "idCategory")
-    @JsonIgnoreProperties("machines")
+    @JsonIgnoreProperties("computers")
     private Category category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
