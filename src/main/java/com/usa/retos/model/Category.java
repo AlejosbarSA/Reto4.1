@@ -44,11 +44,11 @@ public class Category implements Serializable {
         this.description = description;
     }
 
-    public List<Computer> getMachines() {
+    public List<Computer> getComputers() {
         return computers;
     }
 
-    public void setMachines(List<Computer> computers) {
+    public void setComputers(List<Computer> computers) {
         this.computers = computers;
     }
 }

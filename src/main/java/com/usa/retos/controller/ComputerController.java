@@ -1,7 +1,7 @@
 package com.usa.retos.controller;
 
 import com.usa.retos.model.Computer;
-import com.usa.retos.service.MachineService;
+import com.usa.retos.service.ComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,40 +12,40 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/Computer")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class MachineController {
+public class ComputerController {
     @Autowired
-    private MachineService machineService;
+    private ComputerService computerService;
 
     @GetMapping("/all")
-    public List<Computer> getMachine(){
+    public List<Computer> getComputer(){
 
-        return machineService.getAll();
+        return computerService.getAll();
     }
 
-    @GetMapping("/{idMachine}")
-    public Optional<Computer> getMachine (@PathVariable("idMachine") int id) {
+    @GetMapping("/{idComputer}")
+    public Optional<Computer> getComputer (@PathVariable("idComputer") int id) {
 
-        return machineService.getMachine(id);
+        return computerService.getComputer(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Computer save(@RequestBody Computer machine) {
+    public Computer save(@RequestBody Computer computer) {
 
-        return machineService.save(machine);
+        return computerService.save(computer);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
 
-    public Computer update(@RequestBody Computer machine) {
+    public Computer update(@RequestBody Computer computer) {
 
-        return machineService.update(machine);
+        return computerService.update(computer);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id) {
-        return machineService.deleteMachine(id);
+        return computerService.deleteComputer(id);
     }
 
 }
