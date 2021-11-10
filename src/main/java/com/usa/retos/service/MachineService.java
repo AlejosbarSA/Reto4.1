@@ -1,6 +1,6 @@
 package com.usa.retos.service;
 
-import com.usa.retos.model.Machine;
+import com.usa.retos.model.Computer;
 import com.usa.retos.repository.MachineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,19 +13,19 @@ public class MachineService {
     @Autowired
     private MachineRepository machineRepository;
 
-    public List<Machine> getAll() {
+    public List<Computer> getAll() {
         return machineRepository.getAll();
     }
 
-    public Optional<Machine> getMachine(int id) {
+    public Optional<Computer> getMachine(int id) {
         return machineRepository.getMachine(id);
     }
 
-    public Machine save(Machine machine){
+    public Computer save(Computer machine){
         if(machine.getId()==null){
             return machineRepository.save(machine);
         }else{
-            Optional<Machine> e=machineRepository.getMachine(machine.getId());
+            Optional<Computer> e=machineRepository.getMachine(machine.getId());
             if(e.isEmpty()){
                 return machineRepository.save(machine);
             }else{
@@ -34,9 +34,9 @@ public class MachineService {
         }
     }
 
-    public Machine update(Machine machine){
+    public Computer update(Computer machine){
         if(machine.getId()!=null){
-            Optional<Machine> tmpMachine =machineRepository.getMachine(machine.getId());
+            Optional<Computer> tmpMachine =machineRepository.getMachine(machine.getId());
             if(!tmpMachine.isEmpty()){
                 if(machine.getName()!=null){
                     tmpMachine.get().setName(machine.getName());

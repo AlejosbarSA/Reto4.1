@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "computer")
-public class Machine implements Serializable {
+public class Computer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -22,12 +22,12 @@ public class Machine implements Serializable {
     @JsonIgnoreProperties("computers")
     private Category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
-    @JsonIgnoreProperties({"machine", "client"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
+    @JsonIgnoreProperties({"computer", "client"})
     private List<Message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "machine")
-    @JsonIgnoreProperties({"machine", "client"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
+    @JsonIgnoreProperties({"computer", "client"})
     private List<Reservation> reservations;
 
     public Integer getId() {

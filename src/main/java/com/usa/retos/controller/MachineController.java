@@ -1,6 +1,6 @@
 package com.usa.retos.controller;
 
-import com.usa.retos.model.Machine;
+import com.usa.retos.model.Computer;
 import com.usa.retos.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,27 +17,27 @@ public class MachineController {
     private MachineService machineService;
 
     @GetMapping("/all")
-    public List<Machine> getMachine(){
+    public List<Computer> getMachine(){
 
         return machineService.getAll();
     }
 
     @GetMapping("/{idMachine}")
-    public Optional<Machine> getMachine (@PathVariable("idMachine") int id) {
+    public Optional<Computer> getMachine (@PathVariable("idMachine") int id) {
 
         return machineService.getMachine(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Machine save(@RequestBody Machine machine) {
+    public Computer save(@RequestBody Computer machine) {
 
         return machineService.save(machine);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
 
-    public Machine update(@RequestBody Machine machine) {
+    public Computer update(@RequestBody Computer machine) {
 
         return machineService.update(machine);
     }

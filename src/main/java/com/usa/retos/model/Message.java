@@ -16,7 +16,7 @@ public class Message implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idMachine")
     @JsonIgnoreProperties({"messages","client","reservations"})
-    private Machine machine;
+    private Computer machine;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
@@ -39,11 +39,11 @@ public class Message implements Serializable {
         this.messageText = messageText;
     }
 
-    public Machine getMachine() {
+    public Computer getMachine() {
         return machine;
     }
 
-    public void setMachine(Machine machine) {
+    public void setMachine(Computer machine) {
         this.machine = machine;
     }
 

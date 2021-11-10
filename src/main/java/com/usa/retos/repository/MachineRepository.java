@@ -1,7 +1,7 @@
 package com.usa.retos.repository;
 
 import com.usa.retos.crud.MachineCrud;
-import com.usa.retos.model.Machine;
+import com.usa.retos.model.Computer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,19 +13,19 @@ public class MachineRepository {
     @Autowired
     private MachineCrud machineCrud;
 
-    public List<Machine> getAll() {
-        return (List<Machine>) machineCrud.findAll();
+    public List<Computer> getAll() {
+        return (List<Computer>) machineCrud.findAll();
     }
 
-    public Optional<Machine> getMachine(int id) {
+    public Optional<Computer> getMachine(int id) {
         return machineCrud.findById(id);
     }
 
-    public Machine save (Machine machine) {
+    public Computer save (Computer machine) {
         return machineCrud.save(machine);
     }
 
-    public void delete (Machine machine) {
+    public void delete (Computer machine) {
         machineCrud.delete(machine);
     }
 }

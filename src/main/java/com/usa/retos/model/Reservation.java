@@ -19,7 +19,7 @@ public class Reservation implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonIgnoreProperties({"reservations"})
-    private Machine machine;
+    private Computer machine;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
@@ -60,11 +60,11 @@ public class Reservation implements Serializable {
         this.status = status;
     }
 
-    public Machine getMachine() {
+    public Computer getMachine() {
         return machine;
     }
 
-    public void setMachine(Machine machine) {
+    public void setMachine(Computer machine) {
         this.machine = machine;
     }
 
